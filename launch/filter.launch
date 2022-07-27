@@ -1,0 +1,6 @@
+<launch>
+    <node name="filter_node" pkg="voxel_filter" type="filter_node" output="screen" />
+    <node pkg="rviz" type="rviz" name="rvizstart"  args="-d $(find voxel_filter)/rviz/config.rviz" />
+    <node name="rqt_conf_gui" pkg="rqt_reconfigure" type="rqt_reconfigure" output="screen"/>
+    <include file="$(find nissan_bringup)/launch/3d_nissan.launch" />
+</launch>
